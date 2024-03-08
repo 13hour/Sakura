@@ -8,6 +8,8 @@ import MyScreen from "./my/MyScreen";
 import SearchScreen from "./search/SearchScreen";
 import WelfareScreen from "./welfare/WelfareScreen";
 import theme from "../styles/globalStyle";
+import { Text } from "react-native";
+import Header from "./bookShelf/Header";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,6 +41,8 @@ export default function Layout() {
 					tabBarLabelStyle: {
 						fontSize: 12,
 					},
+					headerShown: true,
+					header: () => <Header />,
 					tabBarIcon: ({ color, focused, size }) => {
 						return (
 							<MaterialCommunityIcons

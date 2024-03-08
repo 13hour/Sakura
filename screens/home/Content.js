@@ -6,48 +6,50 @@ import theme from "../../styles/globalStyle";
 import CategoryContainer from "./CategoryContainer";
 import BooksContainer from "./BooksContainer";
 import ImageSwiperBase from "../../ui/ImageSwiperBase";
-import { windowWith } from "../../constants/serviceSize";
+import { windowHeight, windowWidth } from "../../constants/serviceSize";
+import ScrollViewBase from "../../ui/ScrollViewBase";
+import { useState } from "react";
+import BackgroundColor from "../../ui/BackgroundColor";
 
 export default function Content({ moduleType = 25, channel = 1 }) {
-	const { data: bannerData, isLoading: isBannerLoading } = useGetBanner(
-		moduleType,
-		channel
-	);
-	const { data: categoryData, isLoading: isCategoryLoading } = useGetCategory(
-		moduleType,
-		channel
-	);
+	const queryBannerKey = `/banner?moduleType=${moduleType}&channel=${channel}`;
+	const queryCategoryKey = `/module?moduleType=${moduleType}&channel=${channel}`;
+	const {
+		data: bannerData,
+		isLoading: isBannerLoading,
+		isFetching: isBannerFetching,
+	} = useGetBanner(moduleType, channel, queryBannerKey);
+	const {
+		data: categoryData,
+		isLoading: isCategoryLoading,
+		isFetching: isCategoryFetching,
+	} = useGetCategory(moduleType, channel, queryCategoryKey);
 
-	if (isBannerLoading || isCategoryLoading) return <Loader />;
-	return (
-		<ScrollView
-			overScrollMode="always"
-			contentContainerStyle={{
-				// flex: 1,
-				paddingHorizontal: theme.pagePaddingHorizontal,
-				paddingVertical: theme.pagePaddingVertical,
-				paddingTop: theme.boxPaddingHorizontal,
-				alignItems: "center",
-			}}>
+	const isLoading = isBannerLoading || isCategoryLoading;
+	if (isLoading)
+		return (
 			<View
 				style={{
-					width: windowWith,
-					height: 100,
-					backgroundColor: theme.primaryColor,
-					position: "absolute",
-					top: 0,
-					left: 0,
-					zIndex: -1,
-				}}
-			/>
+					height: windowHeight / 2,
+					justifyContent: "center",
+					alignItems: "center",
+				}}>
+				<Loader size={50} />
+			</View>
+		);
+	return (
+		<ScrollViewBase
+			isFetching={isBannerFetching || isCategoryFetching}
+			queryKeys={[queryBannerKey, queryCategoryKey]}>
 			{/* 轮播图 */}
 			{bannerData.length ? (
 				<ImageSwiperBase
-					width={windowWith - theme.pagePaddingHorizontal * 2}
+					width={windowWidth - theme.pagePaddingHorizontal * 2}
 					height={120}
 					images={bannerData}
 				/>
 			) : null}
+			<BackgroundColor />
 			{/* 分类容器 */}
 			{categoryData?.moduleTypes.length ? (
 				<CategoryContainer data={categoryData?.moduleTypes} />
@@ -55,6 +57,6 @@ export default function Content({ moduleType = 25, channel = 1 }) {
 			<View style={{ flex: 1 }}>
 				<BooksContainer data={categoryData?.moduleList} />
 			</View>
-		</ScrollView>
+		</ScrollViewBase>
 	);
 }

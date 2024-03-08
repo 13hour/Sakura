@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { windowWith } from "../../constants/serviceSize";
+import { windowWidth } from "../../constants/serviceSize";
 import theme from "../../styles/globalStyle";
 import ButtonIconBase from "../../ui/ButtonIconBase";
 
@@ -53,7 +53,7 @@ function LeftButtonContainer({ currentRouteIndex, navigation }) {
 	]).current;
 	const currentRoute = nameList.at(currentRouteIndex || 0).value || "introduce";
 
-	const containerWidth = windowWith * 0.65;
+	const containerWidth = windowWidth * 0.65;
 	const buttonWith = containerWidth / 3;
 	const barWidth = containerWidth / 12;
 	const barTargetLeft =
@@ -77,7 +77,7 @@ function LeftButtonContainer({ currentRouteIndex, navigation }) {
 			justifyContent: "space-between",
 			alignItems: "center",
 			width: containerWidth,
-			height: 50,
+			height: theme.headerHeight,
 		},
 	});
 	return (
@@ -138,7 +138,7 @@ export default function Header({ props }) {
 			flexDirection: "row",
 			justifyContent: "space-between",
 			paddingLeft: 0,
-			width: windowWith,
+			width: windowWidth,
 		},
 	});
 	return (

@@ -1,10 +1,12 @@
 import { StyleSheet } from "react-native";
+import { windowWidth } from "../constants/serviceSize";
 
 const theme = StyleSheet.create({
 	animation: { scale: 1 },
 	borderRadius: 5,
 	light: {
 		pageBackgroundColor: "#ffffff",
+		textPrimaryColor: "#ffffff",
 	},
 	dark: {
 		pageBackgroundColor: "rgba(29, 25, 43, 1)",
@@ -65,6 +67,13 @@ const theme = StyleSheet.create({
 			fontWeight: "400",
 			letterSpacing: 0.25,
 			lineHeight: 20,
+		},
+		bodyBook: {
+			fontFamily: "sans-serif",
+			fontSize: 13,
+			fontWeight: "400",
+			letterSpacing: 0.4,
+			lineHeight: 16,
 		},
 		bodySmall: {
 			fontFamily: "sans-serif",
@@ -165,23 +174,59 @@ const theme = StyleSheet.create({
 			fontSize: 15,
 			fontWeight: "500",
 			letterSpacing: 0.1,
-			// lineHeight: 20,
+			lineHeight: 20,
+		},
+		bookShelfTitleBook: {
+			fontFamily: "sans-serif",
+			fontSize: 16,
+			fontWeight: "100",
+			letterSpacing: 0.6,
+			lineHeight: 20,
 		},
 	},
-	isV3: true,
 	normalColorDark: "#333",
-	normalColorLight: "#ffffff",
+	normalColor: "#ffffff",
 	pagePaddingHorizontal: 16,
 	pagePaddingVertical: 16,
 	boxPaddingHorizontal: 8,
 	boxGap: 3,
+	boxMediumGap: 6,
+	boxLargeGap: 10,
+	boxLargerGap: 16,
+	// text-color
+	text_grey_900: "#212121",
+	text_grey_800: "#424242",
+	text_grey_700: "#616161",
+	text_grey_600: "#757575",
+	text_grey_500: "#9E9E9E",
+	text_grey_400: "#BDBDBD",
+	text_grey_300: "#E0E0E0",
+	text_grey_200: "#EEEEEE",
+	text_grey_100: "#F5F5F5",
+	text_grey_50: "#FAFAFA",
+	// box-borderRadius
+	borderRadius_2: 2,
+	borderRadius_4: 4,
+	borderRadius_6: 6,
+	borderRadius_8: 8,
+	borderRadius_10: 10,
+	borderRadius_12: 12,
+	borderRadius_14: 14,
+	borderRadius_16: 16,
+
 	primaryColor: "#f26b1f",
 	tertiaryColor: "#ff8a65",
 	backgroundColor__1: "#f0efff",
 	backgroundColor__2: "#ffedeb",
 	backgroundColor__3: "#fdf6ec",
-	roundness: 4,
-	version: 3,
+	headerHeight: 50,
+	layouts: {
+		pageLayout: {
+			width: windowWidth,
+			paddingHorizontal: 16,
+			flex: 1,
+		},
+	},
 });
 
 export default theme;

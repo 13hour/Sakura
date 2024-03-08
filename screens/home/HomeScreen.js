@@ -2,33 +2,39 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { ScrollView, View } from "react-native";
 
 import Header from "./Header";
-import { windowHeight, windowWith } from "../../constants/serviceSize";
+import { windowHeight, windowWidth } from "../../constants/serviceSize";
 import theme from "../../styles/globalStyle";
-import ImageSwiperBase from "../../ui/ImageSwiperBase";
-import CategoryContainer from "./CategoryContainer";
-import BooksContainer from "./BooksContainer";
-import Loader from "../../ui/Loader";
-import { useGetBanner } from "./useGetBanner";
-import { useGetCategory } from "./useGetCategory";
 import Content from "./Content";
 
 const Tab = createMaterialTopTabNavigator();
 
 function ProfileScreen({ navigation, route }) {
 	const { moduleType, channel } = route.params;
-	return <Content moduleType={moduleType} channel={channel} />;
+	return (
+		<View style={{ width: windowWidth }}>
+			<Content moduleType={moduleType} channel={channel} />
+		</View>
+	);
 }
 
 function NotificationsScreen({ navigation, route }) {
 	const { moduleType, channel } = route.params;
 
-	return <Content moduleType={moduleType} channel={channel} />;
+	return (
+		<View style={{ width: windowWidth }}>
+			<Content moduleType={moduleType} channel={channel} />
+		</View>
+	);
 }
 
 function SettingsScreen({ navigation, route }) {
 	const { moduleType, channel } = route.params;
 
-	return <Content moduleType={moduleType} channel={channel} />;
+	return (
+		<View style={{ width: windowWidth }}>
+			<Content moduleType={moduleType} channel={channel} />
+		</View>
+	);
 }
 
 export default function HomeScreen(props) {

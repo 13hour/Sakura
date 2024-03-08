@@ -1,7 +1,6 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Button } from "react-native-paper";
 
 /**
  **name:基本图标按钮;
@@ -22,7 +21,3 @@ export default function ButtonIconBase({
 		</Pressable>
 	);
 }
-
-const styles = StyleSheet.create({
-	buttonStyle: {},
-});

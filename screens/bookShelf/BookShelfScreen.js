@@ -1,10 +1,12 @@
-import { StyleSheet, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
+import Content from "./Content";
+import theme from "../../styles/globalStyle";
+import { windowWidth } from "../../constants/serviceSize";
 
 export default function BookShelfScreen() {
 	return (
-		<SafeAreaView>
-			<Text>BookShelfScreen</Text>
-		</SafeAreaView>
+		<View style={{ width: windowWidth }}>
+			<Content />
+		</View>
 	);
 }

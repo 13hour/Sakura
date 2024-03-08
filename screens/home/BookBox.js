@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import ImageBase from "../../ui/ImageBase";
 import theme from "../../styles/globalStyle";
-import { windowWith } from "../../constants/serviceSize";
+import { windowWidth } from "../../constants/serviceSize";
 
 export default function BookBox({ book }) {
 	const width =
-		(windowWith - theme.pagePaddingHorizontal * 2 - 3 * theme.boxGap) / 4;
+		(windowWidth - theme.pagePaddingHorizontal * 2 - 3 * theme.boxGap) / 4;
 	const styles = StyleSheet.create({
 		container: {
 			width,

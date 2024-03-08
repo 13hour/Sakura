@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { getHomeCategory } from "../../api/homeScreenApi";
+import { getBookshelfRecommended } from "../../api/bookShelfApi";
 
-export function useGetCategory(moduleType, channel, queryKey) {
+export function useGetRecommendBook({ queryKey }) {
 	const { data, isLoading, isFetching } = useQuery({
 		queryKey: [queryKey],
 		queryFn: async () => {
-			const data = await getHomeCategory({ moduleType, channel });
-			console.log(data);
+			const data = await getBookshelfRecommended();
+			console.log("recommendedBook data ==", data);
 			return data;
 		},
 	});

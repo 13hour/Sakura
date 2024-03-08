@@ -1,5 +1,6 @@
 import { StyleSheet, View } from "react-native";
 import { Image } from "react-native";
+import theme from "../styles/globalStyle";
 
 /**
  *
@@ -30,5 +31,6 @@ const styles = StyleSheet.create({
 	container: {
 		overflow: "hidden",
 		borderRadius: 3,
+		backgroundColor: theme.colors.elevation.level1,
 	},
 });
