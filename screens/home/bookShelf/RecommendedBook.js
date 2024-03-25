@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
-import ImageBase from "../../ui/ImageBase";
-import TitleBase from "../../ui/TitleBase";
-import Loader from "../../ui/Loader";
-import { windowWidth } from "../../constants/serviceSize";
-import theme from "../../styles/globalStyle";
+import ImageBase from "../../../ui/ImageBase";
+import TitleBase from "../../../ui/TitleBase";
+import Loader from "../../../ui/Loader";
+import { windowWidth } from "../../../constants/serviceSize";
+import theme from "../../../styles/globalStyle";
 import _ from "lodash";
 import { useState } from "react";
-import useLoop from "../../hooks/useLoop";
+import useLoop from "../../../hooks/useLoop";
 
 export default function RecommendedBook({
 	recommendedBookData,
@@ -49,28 +49,28 @@ export default function RecommendedBook({
 }
 
 const imageWidth = 50;
-const containerWidth = windowWidth - theme.pagePaddingHorizontal * 2;
-const textWidth = containerWidth - imageWidth - theme.boxPaddingHorizontal * 4;
+const containerWidth = windowWidth - theme.padding_20;
+const textWidth = containerWidth - imageWidth - theme.padding_8 * 4;
 
 const styles = StyleSheet.create({
 	container: {
 		width: containerWidth,
-		padding: theme.boxPaddingHorizontal * 2,
+		padding: theme.padding_12,
 		borderRadius: theme.borderRadius_12,
 		flexDirection: "row",
-		gap: theme.boxLargeGap,
+		gap: theme.gap_8,
 		backgroundColor: theme.normalColor,
 		elevation: 1.2,
 	},
 	title: {
-		...theme.fonts.bookShelfTitleBook,
+		...theme.fonts.title_16,
 		marginBottom: 8,
 		color: theme.text_grey_800,
 	},
 	text: {
 		width: textWidth,
 		overflow: "hidden",
-		...theme.fonts.bodyBook,
+		...theme.fonts.label_12,
 		color: theme.text_grey_500,
 	},
 });

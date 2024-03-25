@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getHomeBanner } from "../../api/homeScreenApi";
+import { getHomeBanner } from "../../../api/homeScreenApi";
 
 export function useGetBanner(moduleType, channel, queryKey) {
 	const { data, isLoading, isFetching } = useQuery({

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import CategoryBox from "./CategoryBox";
-import theme from "../../styles/globalStyle";
+import theme from "../../../styles/globalStyle";
 
 export default function CategoryContainer({ data }) {
 	return (
@@ -13,10 +13,10 @@ export default function CategoryContainer({ data }) {
 				flexDirection: "column",
 				flexWrap: "wrap",
 				justifyContent: "flex-start",
-				gap: theme.boxGap,
+				gap: theme.gap_2,
 				marginTop: 16,
 			}}>
-			<View style={{ flex: 1, flexDirection: "row", gap: theme.boxGap }}>
+			<View style={{ flex: 1, flexDirection: "row", gap: theme.gap_2 }}>
 				{data.slice(0, 2).map((module, index) => (
 					<CategoryBox
 						flex={2}
@@ -29,7 +29,7 @@ export default function CategoryContainer({ data }) {
 				))}
 			</View>
 
-			<View style={{ flex: 1, flexDirection: "row", gap: theme.boxGap }}>
+			<View style={{ flex: 1, flexDirection: "row", gap: theme.gap_4 }}>
 				{data.slice(2).map(module => (
 					<CategoryBox
 						flex={2}

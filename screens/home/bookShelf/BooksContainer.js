@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import BookBox from "./BookBox";
-import { windowHeight, windowWidth } from "../../constants/serviceSize";
-import theme from "../../styles/globalStyle";
-import Loader from "../../ui/Loader";
-import Empty from "../../ui/Empty";
+import { windowHeight, windowWidth } from "../../../constants/serviceSize";
+import theme from "../../../styles/globalStyle";
+import Loader from "../../../ui/Loader";
+import Empty from "../../../ui/Empty";
 import { useNavigation } from "@react-navigation/native";
 
 export default function BooksContainer({ bookshelf, ieBookshelfLoading }) {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 		width: windowWidth,
 		minHeight: windowHeight / 2,
 		marginTop: 30,
-		paddingHorizontal: theme.pagePaddingHorizontal,
+		paddingHorizontal: theme.padding_16,
 		alignItems: "center",
 		justifyContent: "center",
 	},

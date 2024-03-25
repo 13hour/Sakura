@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
-import theme from "../../styles/globalStyle";
-import ImageBase from "../../ui/ImageBase";
-import TitleBase from "../../ui/TitleBase";
-import { windowWidth } from "../../constants/serviceSize";
+import theme from "../../../styles/globalStyle";
+import ImageBase from "../../../ui/ImageBase";
+import TitleBase from "../../../ui/TitleBase";
+import { windowWidth } from "../../../constants/serviceSize";
 
 const imageWidth = 60;
 
@@ -23,26 +23,22 @@ export default function BookBox({ book }) {
 	);
 }
 
-const textWidth =
-	windowWidth -
-	theme.pagePaddingHorizontal * 2 -
-	imageWidth -
-	theme.boxLargerGap;
+const textWidth = windowWidth - theme.gap_10 - imageWidth - theme.gap_8;
 const styles = StyleSheet.create({
 	container: {
 		flexDirection: "row",
 		width: "100%",
-		gap: theme.boxLargeGap,
+		gap: theme.gap_6,
 		marginBottom: 28,
 	},
 	title: {
-		...theme.fonts.bookShelfTitleBook,
+		...theme.fonts.title_16,
 		marginBottom: 10,
 		color: theme.text_grey_800,
 	},
 	text: {
 		overflow: "hidden",
-		...theme.fonts.labelMedium,
+		...theme.fonts.label_12,
 		color: theme.text_grey_500,
 		width: textWidth,
 		lineHeight: 18,

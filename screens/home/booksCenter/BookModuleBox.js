@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "react-native";
-import TitleBase from "../../ui/TitleBase";
-import theme from "../../styles/globalStyle";
+import TitleBase from "../../../ui/TitleBase";
+import theme from "../../../styles/globalStyle";
 import BookBox from "./BookBox";
 
 export default function BookModuleBox({ category }) {
@@ -12,7 +12,7 @@ export default function BookModuleBox({ category }) {
 			// width: "100%",
 			flex: 1,
 			flexDirection: "row",
-			gap: theme.boxGap,
+			gap: theme.gap_2,
 		},
 	});
 	return (
@@ -21,9 +21,9 @@ export default function BookModuleBox({ category }) {
 				<View>
 					<TitleBase
 						style={{
-							...theme.fonts.titleLarge,
+							...theme.fonts.title_20,
 							fontWeight: "bold",
-							marginTop: 22,
+							marginTop: theme.margin_20,
 						}}
 						title={category.moduleName}
 					/>

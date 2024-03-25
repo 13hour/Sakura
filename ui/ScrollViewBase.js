@@ -14,6 +14,7 @@ export default function ScrollViewBase({
 	children,
 	isFetching,
 	queryKeys = [],
+	containerStyle = {},
 }) {
 	const queryClient = useQueryClient();
 	const [refreshing, setRefreshing] = useState(false);
@@ -39,11 +40,10 @@ export default function ScrollViewBase({
 		<ScrollView
 			overScrollMode="always"
 			contentContainerStyle={{
-				// flex: 1,
-				paddingHorizontal: theme.pagePaddingHorizontal,
-				paddingVertical: theme.pagePaddingVertical,
-				paddingTop: theme.boxPaddingHorizontal,
+				paddingHorizontal: theme.padding_16,
+
 				alignItems: "center",
+				...containerStyle,
 			}}
 			refreshControl={
 				<RefreshControl
@@ -56,7 +56,7 @@ export default function ScrollViewBase({
 			{children ? (
 				children
 			) : (
-				<Text style={theme.fonts.titleSmall}>内容加紧准备中</Text>
+				<Text style={theme.fonts.title_12}>内容加紧准备中</Text>
 			)}
 		</ScrollView>
 	);

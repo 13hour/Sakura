@@ -1,5 +1,5 @@
-import ScrollViewBase from "../../ui//ScrollViewBase";
-import BackgroundColor from "../../ui/BackgroundColor";
+import ScrollViewBase from "../../../ui/ScrollViewBase";
+import BackgroundColor from "../../../ui/BackgroundColor";
 import BooksContainer from "./BooksContainer";
 import RecommendedBook from "./RecommendedBook";
 import { useGetBookshelf } from "./useGetBookshelf";

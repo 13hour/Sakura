@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { getBookshelfList } from "../../api/bookShelfApi";
+import { getBookshelfRecommended } from "../../../api/bookShelfApi";
 
-export function useGetBookshelf({ queryKey }) {
+export function useGetRecommendBook({ queryKey }) {
 	const { data, isLoading, isFetching } = useQuery({
 		queryKey: [queryKey],
 		queryFn: async () => {
-			const data = await getBookshelfList();
-			console.log("bookshelf data ==", data);
+			const data = await getBookshelfRecommended();
+			console.log("recommendedBook data ==", data);
 			return data;
 		},
 	});

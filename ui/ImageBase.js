@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
 	container: {
 		overflow: "hidden",
 		borderRadius: 3,
-		backgroundColor: theme.colors.elevation.level1,
+		backgroundColor: theme.backgroundColor__3,
 	},
 });

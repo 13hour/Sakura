@@ -126,7 +126,7 @@ export default function SwiperBase({ height = 100, width = 300, images = [] }) {
 			style={{
 				height,
 				width,
-				borderRadius: theme.borderRadius,
+				borderRadius: theme.borderRadius_8,
 				overflow: "hidden",
 			}}>
 			<ScrollView
@@ -169,7 +169,7 @@ export default function SwiperBase({ height = 100, width = 300, images = [] }) {
 							backgroundColor:
 								isActiveDot === index + 1
 									? theme.primaryColor
-									: theme.colors.outline,
+									: theme.text_grey_300,
 						}}
 						key={index}></Text>
 				))}

@@ -4,9 +4,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Animated, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { windowWidth } from "../../constants/serviceSize";
-import theme from "../../styles/globalStyle";
-import ButtonIconBase from "../../ui/ButtonIconBase";
+import { windowWidth } from "../../../constants/serviceSize";
+import theme from "../../../styles/globalStyle";
+import ButtonIconBase from "../../../ui/ButtonIconBase";
 
 // 标题栏左侧分类按钮
 function LeftButton({ item: { name, value }, currentRoute, navigation }) {
@@ -14,14 +14,12 @@ function LeftButton({ item: { name, value }, currentRoute, navigation }) {
 
 	const style = StyleSheet.create({
 		focused: {
-			...theme.fonts.headlineSmall,
-			color: theme.colors.onPrimary,
-			fontWeight: "700",
+			...theme.fonts.title_22,
+			color: theme.normalColor,
 		},
 		blur: {
-			...theme.fonts.titleMedium,
-			color: theme.colors.onPrimary,
-			fontSize: 19,
+			...theme.fonts.title_18,
+			color: theme.normalColor,
 			justifyContent: "center",
 			flexDirection: "row",
 		},
@@ -115,11 +113,7 @@ function LeftButtonContainer({ currentRouteIndex, navigation }) {
 function RightButton() {
 	return (
 		<View style={{ justifyContent: "center" }}>
-			<ButtonIconBase
-				iconName="magnify"
-				size={30}
-				color={theme.colors.onPrimary}
-			/>
+			<ButtonIconBase iconName="magnify" size={30} color={theme.normalColor} />
 		</View>
 	);
 }
@@ -146,15 +140,14 @@ export default function Header({ props }) {
 			<View
 				style={[
 					styles.headerContainer,
-					{ paddingHorizontal: theme.pagePaddingHorizontal },
+					{ paddingHorizontal: theme.padding_16 },
 					{ backgroundColor: theme.primaryColor },
 				]}>
 				<LeftButtonContainer
-					theme={theme}
 					currentRouteIndex={currentRouteIndex}
 					navigation={navigation}
 				/>
-				<RightButton theme={theme} />
+				<RightButton />
 			</View>
 		</SafeAreaView>
 	);

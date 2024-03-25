@@ -14,9 +14,10 @@ export default function ButtonIconBase({
 	size = 32,
 	color = "#ffffff",
 	iconName = "bat",
+	onPress,
 }) {
 	return (
-		<Pressable>
+		<Pressable onPress={onPress}>
 			<MaterialCommunityIcons size={size} color={color} name={iconName} />
 		</Pressable>
 	);

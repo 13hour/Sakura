@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getHomeCategory } from "../../api/homeScreenApi";
+import { getHomeCategory } from "../../../api/homeScreenApi";
 
 export function useGetCategory(moduleType, channel, queryKey) {
 	const { data, isLoading, isFetching } = useQuery({
